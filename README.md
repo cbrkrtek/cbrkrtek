@@ -43,10 +43,10 @@ My approach is hands-on. I build a control, then deliberately attack it, because
 ### [Dependency Confusion Lab](https://github.com/cbrkrtek/supply-chain-dependency-confusion)
 `Nexus Repository OSS` `npm` `pip` `Docker Compose`
 
-- **Attack:** reproduced dependency confusion against a Nexus Group Repository (private and public registries behind one URL), where npm/pip resolved an attacker-controlled higher-version package over the internal one.
-- **Defense:** verified npm scoped packages and pip `--index-url` pinning as effective client-side mitigations.
-- **Finding:** Nexus server-side **Routing Rules silently fail** in hosted+hosted group topologies, so client-side scoping is the only reliable control in this common architecture.
-
+- **Setup:** self-hosted Nexus Repository OSS 3.68 lab (Docker Compose, REST API provisioning script) with npm and PyPI group repositories, each merging an internal hosted repository and a hosted repository standing in for a public registry.
+- **Experiment:** with a same-name, higher-version package in the simulated public repository, the group listed both versions and npm installed the higher one. Documented that the group merges metadata and the client resolver picks the version. No proxy to a real external registry was involved.
+- **Mitigations tested:** npm scoped package with scope-to-registry mapping in `.npmrc`, and pip with a single `--index-url`; both installed the internal package. The vulnerable pip run was not recorded.
+- **Not tested / corrected:** lockfiles, `--ignore-scripts`, routing rules on a proxy. Initially misread the absence of routing-rule effects in a hosted-only group as a finding; corrected after checking Sonatype's documentation (routing rules apply to proxy repositories only).
 ---
 
 ## Technical Skills
