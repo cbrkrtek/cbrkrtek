@@ -1,7 +1,7 @@
 <h1 align="center">Hleb Haushyn</h1>
 
 <p align="center">
-  <b>DevSecOps Engineer · Software Supply Chain Security</b><br>
+  <b>DevSecOps specialist, who focuses on Software Supply Chain Security</b><br>
   <sub>Defensive security background. I build pipelines that prove what they ship.</sub>
 </p>
 
