@@ -117,7 +117,7 @@ My approach is hands-on. I build a control, then deliberately attack it, because
 ---
 
 ## Certifications
-
+- **Automating Supply Chain Security - SBOMs and Signatures (LFEL1007)**, Nov 2026
 - **Developing Secure Software (LFD121)**, The Linux Foundation, Oct 2026
 - **SEC1 Certification**, TryHackMe, Feb 2026 (valid until Feb 2029)
 
